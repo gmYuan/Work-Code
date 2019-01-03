@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+*{box-sizing: border-box;}
+
+.token.selector{
+  color: black;
+}
+.token.property{
+  color: black;
+}
+
+<<<<<<< HEAD
+=======
+#paper>.html{
+  background: white;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  overflow: auto;
+}
+>>>>>>> 3d8d5f34b1ce5e6923c4cf23e95dd17875299534
