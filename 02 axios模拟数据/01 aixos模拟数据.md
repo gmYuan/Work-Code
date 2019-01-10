@@ -35,7 +35,7 @@ S5 前端增减了返回数据的数值: HTML内容变化显示 + 发送put请�
 
 ### <span id="1.2"> 1.2 代码实现 </span>
 
-1 具体可参考 [axios模拟数据]()
+1 具体可参考 [axios模拟数据](https://github.com/gmYuan/Work-Code/blob/master/02%20axios%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE/main-axios.js)
 
 以下是部分代码
 
