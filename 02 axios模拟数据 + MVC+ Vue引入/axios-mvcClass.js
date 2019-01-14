@@ -1,40 +1,60 @@
 fakedata()   // 可以理解为是一个 后台处理程序
 
-let model = {
-  data: {
-    name:'',
-    number: 0,
-    id: null
-  },
+class Model {
+  constructor(options){
+    this.data = options.data
+    this.resource = options.resource
+  }
   fetch(id){
-    return axios.get(`/book/${id}`).then((response) =>{
+    return axios.get(`/${this.resource}/${id}`).then((response) =>{
       this.data = response.data
       return response
     }) 
-  },
+  }
   update(id, data){
-    return axios.put(`/book/${id}`, data).then((response) =>{
+    return axios.put(`/${this.resource}/${id}`, data).then((response) =>{
       this.data = response.data
       return response
     }) 
   }
 }
 
-let view = {
+
+class View {
+  constructor(options){
+    this.el = options.el
+    this.template = options.template
+  }
+
+  render(data){
+    let content = this.template
+    for (let key in data){
+      content = content.replace(`__${key}__`, data[key])
+    }
+    $(this.el).html(content)
+  }
+}
+
+
+let model = new Model({
+  data: {
+    name:'',
+    number: 0,
+    id: null,
+  },
+  resource: 'book'
+})
+
+let view = new View({
   el: '#app',
   template: `
-    <p id="book">《__bookname__》</p>
+    <p id="book">《__name__》</p>
     <p id="number">__number__</p>
     <button id="addOne">加1</button>
     <button id="minusOne">减1</button>
     <button id="reset">置0</button>
-  `,
-  render(data){
-    let content = this.template.replace('__bookname__', data.name)
-                .replace('__number__', data.number)
-     $(this.el).html(content)
-  }
-}
+  `
+})
 
 
 let controller = {
