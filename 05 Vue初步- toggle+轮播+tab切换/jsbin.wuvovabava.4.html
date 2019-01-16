@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+ol {
+	list-style: none;
+}
+
+.isActive {
+	background: red;
+}
+</style>
+
+</head>
+<body>
+  <div id="app"></div>
+  
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
+
+<script id="jsbin-javascript">
+let view = new Vue({
+  el: "#app",
+  data: {
+    tablist:[
+      {name: 'tab1', content: '内容1'},
+      {name: 'tab2', content: '内容2'},
+      {name: 'tab3', content: '内容3'}
+    ],
+    isActive: false
+  },
+  
+  template: `
+   <div>
+     <ol>
+       <li v-for="tab in tablist" v-bind:class="isActive" v-on:click="active">{{tab.name}}</li>
+     </ol>
+       
+     <ol>
+       <li v-for="tab in tablist">{{tab.content}}</li>
+     </ol>  
+   </div>
+  `,
+  
+  methods: {
+  	active(){
+
+  		this.isActive = true
+  		console.log(this.isActive)
+  	}
+  
+  }  // 对应methods
+})
+
+</script>
+</body>
+</html>
