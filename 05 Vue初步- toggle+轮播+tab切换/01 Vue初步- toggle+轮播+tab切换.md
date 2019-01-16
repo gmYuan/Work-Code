@@ -1,4 +1,5 @@
 ﻿# Vue初步- toggle + 轮播 + tab切换
+
 目录
 
 
@@ -29,8 +30,31 @@
 
 
 
-1 Q: 为什么要模拟数据
+1 Q: 如何用Vue实现 toggle显示和隐藏
 
 
 
-A: 很多前端实际数据是从服务器获取`
+A: 通过一个 open数值(boolean) + v-if 指令实现 元素显示和隐藏
+
+
+
+### <span id="1.2"> 1.2 轮播</span>
+
+
+
+1 Q: 如何用Vue实现 轮播
+
+
+
+A: 通过 v-bind指令实现 水平位移值的切换
+
+
+### <span id="1.2"> 1.3 tab切换 </span>
+
+
+
+1 Q: 如何用Vue实现 tab切换
+
+A: 通过 v-bind + v-for + v-show指令 实现tab切换
+
+S1 
