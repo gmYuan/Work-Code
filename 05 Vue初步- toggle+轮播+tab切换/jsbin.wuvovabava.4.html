@@ -12,7 +12,7 @@ ol {
 	list-style: none;
 }
 
-.isActive {
+.active {
 	background: red;
 }
 </style>
@@ -28,31 +28,29 @@ let view = new Vue({
   el: "#app",
   data: {
     tablist:[
-      {name: 'tab1', content: '内容1'},
-      {name: 'tab2', content: '内容2'},
-      {name: 'tab3', content: '内容3'}
+      {name: 'a', content: '内容1'},
+      {name: 'b', content: '内容2'},
+      {name: 'c', content: '内容3'}
     ],
-    isActive: false
+    selected: 'a'
   },
   
   template: `
    <div>
      <ol>
-       <li v-for="tab in tablist" v-bind:class="isActive" v-on:click="active">{{tab.name}}</li>
+       <li v-for="tab in tablist" v-on:click = "selected = tab.name"
+       v-bind:class="{active: selected === tab.name}"
+       >{{tab.name}}</li>
      </ol>
        
      <ol>
-       <li v-for="tab in tablist">{{tab.content}}</li>
+       <li v-for="tab in tablist" v-show="selected === tab.name">{{tab.content}}</li>
      </ol>  
    </div>
   `,
   
   methods: {
-  	active(){
-
-  		this.isActive = true
-  		console.log(this.isActive)
-  	}
+  	
   
   }  // 对应methods
 })
