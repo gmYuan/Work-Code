@@ -16,8 +16,7 @@
 
 S0 html结构分别为:
 
-```html
-
+```js
 [header-wrap]
 
 header
@@ -29,8 +28,8 @@ header
       ul
         li
 	  a
-	
-````
+```
+
 S1 .header-wrap部分: 可选设置margin
 
 S2 .header部分:      设置padding + width + 公有background
