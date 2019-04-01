@@ -51,23 +51,6 @@ S3 当get请求获取到数据后，isloading变为假
 
 
 
-## <span id="3"> 3 如何获取 后台数据</span>
-
-1 Q: 如何获取 后台数据
-
-A: S1 安装axios: npm i axios
-
-S2 入口文件main.js引入aixos + 挂载到Vue.prototype上
-
-S3.1 在postList内定义 getDate()方法，通过this.$http发送请求，注意axios支持Promise语法
-
-S3.2 axios的get方法支持第2个参数，用以传入查询参数对象
-
-S4 通过Vue的生命周期钩子，在页面渲染前调用getDate方法， 发送get请求
-
-S5 获取到后台返回的数据后，保存到本地data中
-
-
 
 ## <span id="4"> 4 根据后台保存数据 渲染页面 </span>
 
