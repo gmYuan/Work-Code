@@ -38,7 +38,6 @@ S3 根据mock.js语法，设置响应内容
 1 Q: 如何获取 mock的后台数据
 
 A:
-
 S1 引入axios
 
 S2 点击/复制 接口的`地址链接`，发送HTTP请求
@@ -46,3 +45,9 @@ S2 点击/复制 接口的`地址链接`，发送HTTP请求
 S3 通过promise语法发出/获取请求和响应内容
 
 具体代码，可参考[获取mock数据](https://github.com/gmYuan/Work-Code/blob/master/01%20Vue%E5%AE%9E%E7%8E%B0%E6%9C%89%E8%B5%9E%E5%95%86%E5%9F%8E/learn_mock/index.js)
+
+
+2 Q: 如何直接使用mock.js
+
+A:
+S1 
