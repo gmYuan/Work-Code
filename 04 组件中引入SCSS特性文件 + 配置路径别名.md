@@ -1,10 +1,13 @@
 
-1 Q: 如何在组件中 使用CSS文件(如 variables.scss)
+1 Q: 如何在组件中 使用SCSS文件(如 variables.scss)
 
 A:
-S1 在组件的 `<style lang="scss" scoped>` 通过 @import命令引入CSS文件
+S1 在该组件的 `<style lang="scss" scoped>` 中，通过 @import命令引入SCSS文件
 
 S2 使用定义的变量名即可: `background: $headerBackground;`
+
+S3 注意，如果直接在main.js中引入 variables.scss文件，是不会生效的(无法识别SCSS特有的语法)
+
 
 
 2 Q: 引入CSS文件的路径可能很长，如何通过webpack配置别名
