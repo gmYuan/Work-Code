@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+ <head>
+   <title>开发环境</title>
+   
+ </head>
+
+ <body>
+
+   <ul> 
+      <li>  预读文档: </li>
+      <li>
+         <a href="https://webpack.docschina.org/guides/development/" target="_blank">
+            webpack官方文档-开发环境
+         </a>
+      </li> 
+   </ul>
+
+
+   <h2>SourceMap使用</h2>
+
+
+   <article>
+      <p>Q1: SourceMap各字段含义</p>
+      
+      <p>A: <br>
+         <p> source-map: 生成dist和src对应的报错位置映射文件 </p>
+         <p> cheap: 报错位置只显示行，不显示列 + 默认忽略第3方库文件报错 </p>
+         <p> module: 不会忽略第3方库文件报错 </p>
+         
+         <p> inline: 不生成单独的一个映射文件，而是在打包的JS文件内生成 base64字符 </p>
+         <p> eval: 不生成单独的一个映射文件，而是在打包的JS文件内生成 eval代码 </p>
+      </p>
+    
+   </article>
+   <hr>
+
+
+   <article>
+      <p>Q1: SourceMap最佳实践</p>
+      
+      <p>A: <br>
+         <p> development: cheap-modeule-eval-source-map</p>
+         <p> production: cheap-module-source-map </p>
+      </p>
+    
+   </article>
+   <hr>
+
+
+ <script type="text/javascript" src="app.bundle.js"></script></body>
+ 
+</html>

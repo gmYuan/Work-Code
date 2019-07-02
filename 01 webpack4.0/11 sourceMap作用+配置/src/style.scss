@@ -1,0 +1,9 @@
+@import './font/iconfont.css';
+
+body {
+  .hello {
+    color: red;
+    background: url('./yun.jpg') contain no-repeat;
+    transform: translate(20px, 50px)
+  }
+}
