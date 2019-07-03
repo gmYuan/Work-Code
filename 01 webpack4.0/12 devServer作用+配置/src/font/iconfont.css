@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1561558312505'); /* IE9 */
+  src: url('iconfont.eot?t=1561558312505#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPUAAsAAAAAB/QAAAOHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDWIMhATYCJAMMCwgABCAFhG0HORvqBlGUDUqa7GeCTad+QUU4iqE1OH4sIQw2BUV40k3Hw39j3+6bma/adpMKqqerRPx0IpUEkWQZQifRCIXQVkJD739uqIR6r29DIsk0aZ7d/xO9HfY6LZMSIUJo/LX222V+Qly1fu6dZcSTeijMZWwzgfL/3zt97/8SyOa1LKc5hn/qBBgHFNBYmwIKtEAC8hbZnUFe1GECTbMU+cuh+1OuprBGBeJlhTRytZxJaakOdaFas7CIdyrq6U36gbfh9+PATtRJKpk18crjhZ0b7/bs9uXX//s98BHxdA4Iy8hYk1OIR7WuO4pxak1RU1OV2ouripCmiv7/TyjSNdWN/vESUWVVtsESTid2e1wewW5fWsL1e6jizHt8p7rxUH85pj22rm28OB36IfX2lrKyLqZU399TJy/djZcnVU0PriVfX5P7Ky+dUvuwWtveWFemk+lJy/d3/PGRNvVWIjXF9NPKksibMMmqYslVdoCTksJrnFaAulY2aPFInSdfk5cpdkvt42PqLd1A65hF5mgTH5Jp+J6MFkHeffJk4HTquP/o/3wwVN86F/VUauZa76xmeatE5cSFIt0IHd011TVdnQjdXFw7gmqT2Du+bUS5JdSxABbJ+mCY44D3wm7fwWc5HpvjuiWsQ/VzllNlFLQUzlJTZAOGTErKY1A2JVU6dxHy+MlYNxcNQpzfSeDjcWC8HwyKzNfTQ58jBKfTYj1YkEEQQtViUQcBBgldnalbiDpRbWBOhmBr3HoZddqCIQIBDltOLCr8utZycnNydY9zgy6H/yR/yS3IX9PBn/yNX59ne/K6p0m9VcBPjw9h6D8p4Jr6fbqD/yYG1hVdaplzUUWuyHRn1zMBCSwQ1f5WLQz9hmsm4AShnhMLkNTMQFY3hwt9DSpaDkNV3TloWrVa3jJCiqI0sOKFIPS9Ien6BlnfBxf6Fyqm/lDVjwxNt2K0YctCPJO81IgGow3mE1wrjoRj5UZUfUB5DQzKSkPmBSlzozDY2CpmVxghTTElu8khswBBcQhLdBwGQQwJxR5arDnMyai3+bjuRZoVh7mGSwgyMGQDpifgssQiwm/OGqXPHyDpKmCgFkqN/wKRjNs+GND0AXilikCUW3kmcyMNMSYAgcRCYIkcKLBTMZDU9/MgC9M4AxKJkR5pJKAqbXlN+H5boMmalCNFjqL+qsKIpO8Wl25HLDe5HAA=') format('woff2'),
+  url('iconfont.woff?t=1561558312505') format('woff'),
+  url('iconfont.ttf?t=1561558312505') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1561558312505#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiangkan:before {
+  content: "\e87d";
+}
+
+.icon-WIFI:before {
+  content: "\e87f";
+}
+
