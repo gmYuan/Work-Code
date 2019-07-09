@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+ <head>
+   <title>ES6语法转化</title>
+   
+ </head>
+
+ <body>
+
+   <ul> 
+      <li>  预读文档: </li>
+      <li>
+         <a href="https://www.babeljs.cn/setup" target="_blank">
+            babel官方文档
+         </a>
+      </li> 
+   </ul>
+
+
+   <h2>ES6语法转化- babel</h2>
+
+
+   <article>
+      <p>Q1: babel 作用</p>
+      
+      <p>A: <br>
+         <p> S1 把浏览器不支持的新语法 转化为支持的语法形式 </p>
+         
+      </p>
+    
+   </article>
+   <hr>
+
+
+   <article>
+      <p>Q2: 如何使用babel转化语法</p>
+      
+      <p>A: <br>
+         <p> S1 安装babel-loader&babel-core  + 配置loader, 以让webpack支持使用babel </p>
+
+         <p> S2 安装 + 配置@babel/preset-env, 以把ES6 初步转化为ES5语法 </p>
+
+         
+         <p> S3.1 即时转化为ES5语法，有些语法低版本浏览器仍然无法识别，所以需要使用ployfill </p>
+
+         <p> S3.2 安装 + 在JS入口文件中引入 @babel/polyfill</p>
+
+         <p> S3.3 按代码部分/浏览器版本 使用polyfill: .babelrc内参数配置</p>
+      
+      </p>
+    
+   </article>
+   <hr>
+
+
+   <article>
+      <p>Q3: 组件库等如何使用ployfill且不污染全局变量</p>
+      
+      <p>A: <br>
+         <p> 使用 @babel/plugin-transform-runtime </p>
+
+         <p> S1 安装 @babel/plugin-transform-runtime + @babel/runtime-corejs2 </p>
+
+         <p> S2 在.babelrc内 配置插件选项 </p>
+      
+      </p>
+    
+   </article>
+   <hr>
+
+
+ </body>
+ 
+</html>
