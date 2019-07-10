@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+ <head>
+   <title>ES6语法转化</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+ </head>
+
+ <body>
+
+   <ul> 
+      <li>  预读文档: </li>
+      <li>
+         <a href="https://webpack.docschina.org/guides/tree-shaking/" target="_blank">
+            webpack官方文档—— tree shaking
+         </a>
+      </li> 
+   </ul>
+
+
+   <h2>打包去除未使用模块—— tree shaking</h2>
+
+
+   <article>
+      <p>Q1: tree shaking 作用</p>
+      
+      <p>A: <br>
+         <p> S1 在模块A引入模块B时，检测B的引入内容，在打包时忽略B中的其他未引入内容 </p>
+         <p>S2 tree shaking 依赖于 ES6import语法的 静态结构特性</p>
+         
+      </p>
+    
+   </article>
+   <hr>
+
+
+   <article>
+      <p>Q2: 如何使用tree shaking</p>
+      
+      <p>A: <br>
+         <p> S1 使用模块A/B, A中引入B的内容 </p>
+         <p> S2 开发环境中: 在webpack.config中配置 optimization</p>
+         <p> S3 有些第三方文件/CSS文件导入时，可能不希望使用tree shaking对其进行处理: 在package.json中配置sideEffects </p>
+
+         <p> S4 在生产环境中，已经默认配置了Tree shaking，无需做其他配置 </p>
+      </p>
+    
+   </article>
+   <hr>
+
+ </body>
+ 
+</html>
