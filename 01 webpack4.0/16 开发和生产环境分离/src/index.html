@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+ <head>
+   <title>开发和生产环境分离</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+ </head>
+
+ <body>
+
+   <ul> 
+      <li>  预读文档: </li>
+      <li>
+         <a href="https://webpack.docschina.org/guides/production/" target="_blank">
+            webpack官方文档—— 生产环境
+         </a>
+      </li> 
+   </ul>
+
+
+   <h2> 开发和生产环境配置分离 </h2>
+
+
+   <article>
+      <p>Q1: 为什么要分离 开发环境配置 和 生产环境配置 </p>
+      
+      <p>A: <br>
+         <p> S1 开发环境的配置中，关注的是便于调试: devServer + HMR + SourceMap</p>
+         <p> S2 生产环境的配置中，关注的是优化性能: TreeShaking + 代码压缩等</p>
+         
+      </p>
+    
+   </article>
+   <hr>
+
+
+   <article>
+      <p>Q2: 如何实现 开发环境和生产环境 配置分离</p>
+      
+      <p>A: <br>
+         <p> S1 在build文件夹下，分布创建 webpack.base.conf.js / ..dev../ ..prod..</p>
+         <p> S2 安装 webpack-merge, 便于之后 base.conf的合并 </p>
+         
+         <p> S3.1 把dev和prod都需要的配置，放在base.conf下: entry,output,module,部分plugins </p>
+         <p> S3.2 开发环境需要的配置: mode /sourceMap / devServer + HMR </p>
+         <p> S3.3 生产环境需要的配置: mode /sourceMap / tree shaking </p>
+
+         <p> S4 在package.json文件下，配置不同环境对应的 打包命令 </p>
+      </p>
+    
+   </article>
+   <hr>
+
+ </body>
+ 
+</html>
