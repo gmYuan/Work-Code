@@ -11,8 +11,8 @@ S2 监听load事件- onLoad方法
 
   S2.1 设置loading为ture(自动/手动)
 
-  S2.2发起数据请求
-  
+  S2.2 发起数据请求
+
   S2.3 加载状态结束后loading改回false + 改变下次发送请求的分页索引
 
   S2.4 当返回的当前页数量 < 预定的每页数据时，说明已经返回所有数据，finished设为true
@@ -58,7 +58,7 @@ export default {
 import { List } from 'vant'
 Vue.use(List)
 
-let app = new Vue({ 
+let app = new Vue({
   el: '#app',
 
   data: {
@@ -102,7 +102,7 @@ let app = new Vue({
 
 })
 
-  
+
 }
 </script>
 
