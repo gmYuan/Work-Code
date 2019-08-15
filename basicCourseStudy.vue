@@ -121,7 +121,10 @@
     hotReviewsApi,
     newReviewsApi,
     addReviewsApi,
-    basicCourseStatusApi
+    basicCourseStatusApi,
+
+    commonCourseDetailApi,
+    commonCourseStatusApi
   } from 'api'
 
 
@@ -189,14 +192,23 @@
       },
 
       /* 获取课程详情 */
-      getDetail() {
-        let {categoryId , courseId} = this.$route.query
-        let para = {categoryId, courseId}
-        basicCourseStudyApi(para).then(res => {
-          // console.log('res', res)
-          let data = res.data
-          this.courseId = data.courseId
+      async getDetail() {
+        let {courseId, fromType} = this.$route.query
+        let para = {courseId}
+        let res
+        let data
+        // console.log('ty', typeof fromType)
+        if (fromType == 0) {                        // 基础课程列表页 -详情
+          res = await basicCourseStudyApi(para)
+          data = res.data
 
+        } else if (fromType == 1) {               // 公开课程列表页 -详情
+          res = await commonCourseDetailApi(para)
+          data = res.data
+        }
+
+        if (data) {
+          this.courseId = data.courseId
           this.courseDetail.title = data.courseName
           this.courseDetail.introduction = data.details
           this.src = data.videoUrl
@@ -208,8 +220,9 @@
           this.isCollection = data.isCollection
           this.isPointPraise = data.isPointPraise
           this.status = data.status
-        })
+        }
       },
+
 
       /* 获取评论列表 */
       getComments() {
@@ -308,28 +321,37 @@
       /* 更新学习状态为已学完 */
       getVideoStatus() {
         let video = this.$refs.video
-        let {courseId} = this.$route.query
+        let {courseId, fromType} = this.$route.query
         video.addEventListener('ended', function (e) {
           let duration = (Math.floor(e.target.duration) * 1000 )
           let params = {courseId, status: 1, duration: duration}
-          basicCourseStatusApi(params)
+
+          if (fromType == 0) {             // 基础课程学习状态更新
+            basicCourseStatusApi(params)
+          } else if (fromType == 1) {      // 公开课程学习状态更新
+            commonCourseStatusApi(params)
+          }
         })
       },
 
       /* 更新未学完的 学习状态 */
       updateStudyStatus () {
-        if (this.status !== 1) {          //还未学完时
+        if (this.status != 1) {          //还未学完时
+          let {fromType} = this.$route.query
           let video = this.$refs.video
           let duration = (Math.floor(video.currentTime) * 1000)
-          let params = {courseId: this.courseId , status: 2, duration: duration};
-          return  basicCourseStatusApi(params);
+          let params = {courseId: this.courseId , status: 2, duration: duration}
+          if (fromType == 0) {                    // 基础课程学习状态更新
+            return basicCourseStatusApi(params)
+          } else if (fromType == 1) {            // 公开课程学习状态更新
+            return commonCourseStatusApi(params)
+          }
         } else {
           return new Promise( (resolve, reject) => {
             return resolve()
           })
         }
       }
-
     },
 
     created() {
@@ -346,9 +368,6 @@
           next()
       })
     },
-
-
-
 
   }
 </script>
